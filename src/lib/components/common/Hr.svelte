@@ -1,0 +1,1 @@
+<hr class="w-full dark:border-gray-800" />
