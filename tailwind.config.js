@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import defaultTheme from 'tailwindcss/defaultTheme';
 export default {
 	content: [
 		'./src/**/*.{html,js,svelte,ts}',
@@ -9,18 +10,21 @@ export default {
 			sans: ['Inter', 'sans-serif']
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Patrick Hand', defaultTheme.fontFamily.sans]
+			},
 			colors: {
-				primary: {
-					50: '#f0fdfa',
-					100: '#ccfbf1',
-					200: '#99f6e4',
-					300: '#5eead4',
-					400: '#2dd4bf',
-					500: '#14b8a6',
-					600: '#0d9488',
-					700: '#0f766e',
-					800: '#115e59',
-					900: '#134e4a'
+				pen: {
+					50: '#f7f7f7',
+					100: '#efefef',
+					200: '#d7d7d7',
+					300: '#bfbfbf',
+					400: '#8f8f8f',
+					500: '#5f5f5f',
+					600: '#565656',
+					700: '#474747',
+					800: '#373737',
+					900: '#1b1b1b'
 				}
 			}
 		}

@@ -1,10 +1,15 @@
-<script lang='ts'>
-	import { Avatar } from 'flowbite-svelte';
+<script lang="ts">
+	import Avatar from '../common/Avatar.svelte';
+	import Brand from '../common/Brand.svelte';
 	import DarkMode from '../common/DarkMode.svelte';
-	let avatarClass = 'shadow-md';
-
 </script>
 
-<div class="py-4 px-6 flex justify-end items-center space-x-4">
-	<Avatar src="https://picsum.photos/200" class={avatarClass} />
+<div class="flex justify-between space-x-4 border-b border-pen-900">
+	<div class="border-r border-pen-900 py-2 px-6">
+		<Brand />
+	</div>
+	<div class="flex items-center py-2 px-6">
+		<DarkMode />
+		<Avatar />
+	</div>
 </div>
