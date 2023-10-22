@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PasswordSchema } from '$lib/schemas';
-	import { Button, Input } from 'flowbite-svelte';
+	import { Input } from "$lib/components/ui/input";
+	import Button from '$lib/components/ui/button/button.svelte';
 	import { superForm } from 'sveltekit-superforms/client';
 	import type { SuperValidated } from 'sveltekit-superforms/index';
 	export let data: SuperValidated<PasswordSchema>;
@@ -11,7 +12,7 @@
 
 <section class="px-6 pt-16">
 	<div class="flex items-center font-semibold">
-		<span class="ml-4">Password</span>
+		<span>Password</span>
 	</div>
 	<p class="mt-3 max-w-none text-sm">Change the password associated with your account</p>
 	<!-- Change Password Form -->

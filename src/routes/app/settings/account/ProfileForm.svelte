@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { ProfileSchema } from '$lib/schemas';
-	import { Button, Input } from 'flowbite-svelte';
+	import Button from '$lib/components/ui/button/button.svelte';
+	import Input from '$lib/components/ui/input/input.svelte';
 	import { superForm } from 'sveltekit-superforms/client';
 	import type { SuperValidated } from 'sveltekit-superforms/index';
 	export let data: SuperValidated<ProfileSchema>;
@@ -9,7 +10,7 @@
 
 <section class="px-6 pt-16">
 	<div class="flex items-center font-semibold">
-		<span class="ml-4">Personal Details</span>
+		<span>Personal Details</span>
 	</div>
 	<p class="mt-3 text-sm">Change the personal details associated with your account</p>
 	<!-- Personal Details Form -->

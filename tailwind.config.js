@@ -1,33 +1,63 @@
+import { fontFamily } from "tailwindcss/defaultTheme";
+
 /** @type {import('tailwindcss').Config} */
-import defaultTheme from 'tailwindcss/defaultTheme';
-export default {
-	content: [
-		'./src/**/*.{html,js,svelte,ts}',
-		'./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'
-	],
+const config = {
+	darkMode: ["class"],
+	content: ["./src/**/*.{html,js,svelte,ts}"],
 	theme: {
-		fontFamily: {
-			sans: ['Inter', 'sans-serif']
+		container: {
+			center: true,
+			padding: "2rem",
+			screens: {
+				"2xl": "1400px"
+			}
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Patrick Hand', defaultTheme.fontFamily.sans]
+				sans: ["Patrick Hand", ...fontFamily.sans],
 			},
-			colors: {
-				pen: {
-					50: '#f7f7f7',
-					100: '#efefef',
-					200: '#d7d7d7',
-					300: '#bfbfbf',
-					400: '#8f8f8f',
-					500: '#5f5f5f',
-					600: '#565656',
-					700: '#474747',
-					800: '#373737',
-					900: '#1b1b1b'
+			colors: { 
+				border: "hsl(var(--border))",
+				input: "hsl(var(--input))",
+				ring: "hsl(var(--ring))",
+				background: "hsl(var(--background))",
+				foreground: "hsl(var(--foreground))",
+				primary: {
+					DEFAULT: "hsl(var(--primary))",
+					foreground: "hsl(var(--primary-foreground))"
+				},
+				secondary: {
+					DEFAULT: "hsl(var(--secondary))",
+					foreground: "hsl(var(--secondary-foreground))"
+				},
+				destructive: {
+					DEFAULT: "hsl(var(--destructive))",
+					foreground: "hsl(var(--destructive-foreground))"
+				},
+				muted: {
+					DEFAULT: "hsl(var(--muted))",
+					foreground: "hsl(var(--muted-foreground))"
+				},
+				accent: {
+					DEFAULT: "hsl(var(--accent))",
+					foreground: "hsl(var(--accent-foreground))"
+				},
+				popover: {
+					DEFAULT: "hsl(var(--popover))",
+					foreground: "hsl(var(--popover-foreground))"
+				},
+				card: {
+					DEFAULT: "hsl(var(--cardfont))",
+					foreground: "hsl(var(--card-foreground))"
 				}
-			}
+			},
+			borderRadius: {
+				lg: "var(--radius)",
+				md: "calc(var(--radius) - 2px)",
+				sm: "calc(var(--radius) - 4px)"
+			},
 		}
 	},
-	plugins: [require('flowbite/plugin')]
 };
+
+export default config;

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { Button } from 'flowbite-svelte';
 	import type { PageData } from './$types';
 	import ProfileForm from './ProfileForm.svelte';
 	import EmailForm from './EmailForm.svelte';
 	import PasswordForm from './PasswordForm.svelte';
 	import { page } from '$app/stores'
 	import toast from 'svelte-french-toast';
+	import Button from '$lib/components/ui/button/button.svelte';
 	export let data: PageData;
 
 	// get search params reset-password
@@ -28,12 +28,12 @@
 		</span>
 	</div>
 	<div
-		class="divide-surface-700 mx-auto max-w-xl space-y-16 divide-y divide-gray-300 dark:divide-gray-700"
+		class="divide-surface-700 mx-auto max-w-xl space-y-16 divide-y divide-primary"
 	>
 		<!-- Current Plan & Billing Section -->
 		<section class="px-6">
 			<div class="flex items-center font-semibold">
-				<span class="ml-4">Current Plan & Billing</span>
+				<span>Current Plan & Billing</span>
 			</div>
 			<p class="mt-3 max-w-none text-sm">Manage your current plan and billing details</p>
 			<div class="mt-8">
