@@ -1,6 +1,8 @@
 <script lang="ts">
-	import { Card, Button } from 'flowbite-svelte';
+	import * as Card from "$lib/components/ui/card";
+	import { Button } from '$lib/components/ui/button';
 	import { superForm } from 'sveltekit-superforms/client';
+	import Input from "$lib/components/ui/input/input.svelte";
 	import type { PageData } from './$types';
 	import toast from 'svelte-french-toast';
 	export let data: PageData;
@@ -28,35 +30,36 @@
 
 <div class="py-20">
 	<div class="flex w-full flex-col items-center">
-		<div class="max-w-2xl text-center">
-			<h1 class="text-4xl font-semibold">Register for an account</h1>
-		</div>
-		<Card class="mt-6 w-full" padding="xl" size="md">
+		<Card.Root>
+			<Card.Header>
+				<Card.Title>Register for an account</Card.Title>
+			</Card.Header>
+			<Card.Content class="grid gap-4 min-w-[350px]">
 			<form method="POST" class="flex flex-col space-y-6" use:enhance>
 				<label class="space-y-2" for="full_name">
 					<span>Name</span>
-					<input type="text" name="full_name" bind:value={$form.full_name} />
+					<Input type="text" name="full_name" bind:value={$form.full_name} />
 					{#if $errors.full_name}
 						<span class="block text-red-600 dark:text-red-500">{$errors.full_name}</span>
 					{/if}
 				</label>
 				<label class="space-y-2" for="email">
 					<span>Email</span>
-					<input type="email" name="email" bind:value={$form.email} />
+					<Input type="email" name="email" bind:value={$form.email} />
 					{#if $errors.email}
 						<span class="block text-red-600 dark:text-red-500">{$errors.email}</span>
 					{/if}
 				</label>
 				<label class="space-y-2" for="password">
 					<span>Password</span>
-					<input type="password" name="password" bind:value={$form.password} />
+					<Input type="password" name="password" bind:value={$form.password} />
 					{#if $errors.password}
 						<span class="block text-red-600 dark:text-red-500">{$errors.password}</span>
 					{/if}
 				</label>
 				<label class="space-y-2" for="passwordConfirm">
 					<span>Confirm Password</span>
-					<input type="password" name="passwordConfirm" bind:value={$form.passwordConfirm} />
+					<Input type="password" name="passwordConfirm" bind:value={$form.passwordConfirm} />
 					{#if $errors.passwordConfirm}
 						<span class="block text-red-600 dark:text-red-500">{$errors.passwordConfirm}</span>
 					{/if}
@@ -72,6 +75,7 @@
 					>
 				</div>
 			</form>
-		</Card>
+			</Card.Content>
+		</Card.Root>
 	</div>
 </div>
