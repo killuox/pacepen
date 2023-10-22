@@ -17,14 +17,14 @@
 					href={route.url}
 					class="py-2 px-6 hover:text-pen-900 hover:dark:text-white {$page.url.pathname ===
 					route.url
-						? 'text-pen-900 dark:text-white'
-						: 'text-pen-500 dark:text-pen-400'}"
+						? 'text-primary-900 dark:text-white'
+						: 'text-primary-500 dark:text-primary-400'}"
 				>
 					{route.label}
 				</a>
 				{#if $page.url.pathname === route.url}
 					<div
-						class="absolute -bottom-4 left-1/2 w-3/4 h-1 bg-pen-900 dark:bg-white rounded transform -translate-x-1/2"
+						class="absolute -bottom-4 left-1/2 w-3/4 h-1 border-b-2 dark:border-b-2 rounded transform -translate-x-1/2"
 					/>
 				{/if}
 			</div>
