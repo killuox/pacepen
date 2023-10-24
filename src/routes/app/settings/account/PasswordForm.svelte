@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PasswordSchema } from '$lib/schemas';
 	import { Input } from "$lib/components/ui/input";
-	import Button from '$lib/components/ui/button/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 	import { superForm } from 'sveltekit-superforms/client';
 	import type { SuperValidated } from 'sveltekit-superforms/index';
 	export let data: SuperValidated<PasswordSchema>;

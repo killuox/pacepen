@@ -17,6 +17,17 @@ const config = {
 				sans: ["Patrick Hand", ...fontFamily.sans],
 			},
 			colors: { 
+				pen: {
+					100: "#f5f5f5",
+					200: "#e0e0e0",
+					300: "#cfcfcf",
+					400: "#b9b9b9",
+					500: "#a3a3a3",
+					600: "#8d8d8d",
+					700: "#777777",
+					800: "#616161",
+					900: "#1b1b1b"
+				},
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
 				ring: "hsl(var(--ring))",

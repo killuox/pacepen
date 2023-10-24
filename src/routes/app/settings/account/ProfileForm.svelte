@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { ProfileSchema } from '$lib/schemas';
-	import Button from '$lib/components/ui/button/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 	import Input from '$lib/components/ui/input/input.svelte';
 	import { superForm } from 'sveltekit-superforms/client';
 	import type { SuperValidated } from 'sveltekit-superforms/index';

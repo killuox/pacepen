@@ -15,7 +15,7 @@ const baseUrl = '/app';
 export const routes: Route[] = [
 	{
 		url: `${baseUrl}`,
-		label: 'Home',
+		label: 'Dashboard',
 		icon: House
 	},
 	{

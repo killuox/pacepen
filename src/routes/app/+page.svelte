@@ -1,8 +1,6 @@
 <script lang="ts">
-	import { t } from '$lib/locales';
-	const name = 'This page is Home page!';
+	import Pomodoro from '$lib/components/widgets/Pomodoro.svelte';
+	import DashboardMenu from '$lib/components/layout/DashboardMenu.svelte';
 </script>
 
-<p>
-	{$t('common.dashboard.title', { name })}
-</p>
+<DashboardMenu />

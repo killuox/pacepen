@@ -5,7 +5,7 @@
 	import PasswordForm from './PasswordForm.svelte';
 	import { page } from '$app/stores'
 	import toast from 'svelte-french-toast';
-	import Button from '$lib/components/ui/button/button.svelte';
+	import { Button } from "$lib/components/ui/button";
 	export let data: PageData;
 
 	// get search params reset-password

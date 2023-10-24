@@ -3,7 +3,7 @@
 </script>
 
 <AppShell>
-	<main class="py-10 pr-10 overflow-auto">
+	<main class="overflow-auto">
 		<slot />
 	</main>
 </AppShell>
