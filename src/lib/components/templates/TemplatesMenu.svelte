@@ -21,15 +21,15 @@
 	<div class="flex flex-col space-y-2 items-start">
 		{#each tempTemplates as template}
 			<button
-				class="flex items-center w-full p-4 hover:bg-pen-100 rounded-md text-start"
+				class="flex items-center w-full p-4 hover:bg-pen-100 dark:hover:bg-pen-800 rounded-md text-start"
 				on:mouseenter={() => (hoveredBtn = template.name)}
 				on:mouseleave={() => (hoveredBtn = '')}
 			>
 				{template.name}
 				{#if hoveredBtn === template.name}
 					<div class="flex items-center ml-auto space-x-2">
-						<Icon icon={Eye} />
-						<Icon icon={Pen} />
+						<Icon icon={Eye} cn={"hover:text-pen-800 dark:hover:text-pen-200"}/>
+						<Icon icon={Pen} cn={"hover:text-pen-800 dark:hover:text-pen-200"}/>
 					</div>
 				{/if}
 			</button>
