@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import { DateInput } from 'date-picker-svelte';
-	import { CaretLeft, CaretRight, CaretDown } from 'phosphor-svelte';
+	import { CaretLeft, CaretRight, CaretDown, Gear, Image } from 'phosphor-svelte';
 	import Icon from '../common/Icon.svelte';
 	let date = new Date();
 	let isClient = false;
@@ -15,10 +15,10 @@
 </script>
 
 <div class="border-b p-2 px-6 flex items-center justify-between">
-	<button class="flex items-center border rounded-md p-2 py-1">
+	<Button variant="ghost" class="flex items-center rounded-md space-x-2">
 		<h2 class="text-lg">Default</h2>
-		<Icon icon={CaretDown} cn={'ml-2'} />
-	</button>
+		<Icon icon={CaretDown} />
+	</Button>
 	{#if isClient}
 		<div class="relative flex items-center">
 			<button
@@ -41,5 +41,12 @@
 			</button>
 		</div>
 	{/if}
-	<Button href="/app/templates">Templates</Button>
+	<div class="flex items-center space-x-1">
+		<Button variant="ghost" size="icon">
+			<Icon icon={Image} size={18} />
+		</Button>
+		<Button variant="ghost" size="icon">
+			<Icon icon={Gear} size={18} />
+		</Button>
+	</div>
 </div>

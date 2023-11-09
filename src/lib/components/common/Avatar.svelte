@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let src = 'https://picsum.photos/200';
-	export let size = 40;
+	export let size = 30;
 </script>
 
 <div

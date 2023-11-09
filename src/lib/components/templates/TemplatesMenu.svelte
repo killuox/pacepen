@@ -21,7 +21,7 @@
 	<div class="flex flex-col space-y-2 items-start">
 		{#each tempTemplates as template}
 			<button
-				class="flex items-center w-full p-4 hover:bg-pen-100 dark:hover:bg-pen-800 rounded-md text-start"
+				class="flex items-center w-full p-4 hover:bg-pen-100 dark:hover:bg-pen-800/20 rounded-md text-start"
 				on:mouseenter={() => (hoveredBtn = template.name)}
 				on:mouseleave={() => (hoveredBtn = '')}
 			>

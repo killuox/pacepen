@@ -17,8 +17,8 @@
 					href={route.url}
 					class="py-2 px-6 hover:text-pen-900 hover:dark:text-white {$page.url.pathname ===
 					route.url
-						? 'text-primary-900 dark:text-white'
-						: 'text-primary-500 dark:text-primary-400'}"
+						? 'text-pen-900 dark:text-white'
+						: 'text-pen-700 dark:text-pen-400'}"
 				>
 					{route.label}
 				</a>
@@ -30,7 +30,7 @@
 			</div>
 		{/each}
 	</div>
-	<div class="flex items-center py-2 px-6">
+	<div class="flex items-center py-2 px-6 space-x-3">
 		<DarkMode />
 		<a href="/app/settings/account">
 			<Avatar />
