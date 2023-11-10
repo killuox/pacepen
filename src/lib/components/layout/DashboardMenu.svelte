@@ -43,10 +43,10 @@
 	{/if}
 	<div class="flex items-center space-x-1">
 		<Button variant="ghost" size="icon">
-			<Icon icon={Image} size={18} />
+			<Icon icon={Image} />
 		</Button>
 		<Button variant="ghost" size="icon">
-			<Icon icon={Gear} size={18} />
+			<Icon icon={Gear} />
 		</Button>
 	</div>
 </div>
