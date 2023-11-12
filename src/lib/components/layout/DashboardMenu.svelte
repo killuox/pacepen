@@ -3,8 +3,12 @@
 	import { DateInput } from 'date-picker-svelte';
 	import { CaretLeft, CaretRight, CaretDown, Gear, Image } from 'phosphor-svelte';
 	import Icon from '../common/Icon.svelte';
+	import * as Popover from '$lib/components/ui/popover';
+	import { currentTemplate, templates, updateCurrentTemplate } from '$lib/stores/template';
+
 	let date = new Date();
 	let isClient = false;
+	let popoverOpen = false;
 	// check if client side
 	if (typeof window !== 'undefined') {
 		isClient = true;
@@ -15,10 +19,28 @@
 </script>
 
 <div class="border-b p-2 px-6 flex items-center justify-between">
-	<Button variant="ghost" class="flex items-center rounded-md space-x-2">
-		<h2 class="text-lg">Default</h2>
-		<Icon icon={CaretDown} />
-	</Button>
+	<Popover.Root bind:open={popoverOpen}>
+		<Popover.Trigger>
+			<Button variant="ghost" class="w-32 flex items-center rounded-md space-x-2">
+				<h3 class="text-lg">{$currentTemplate.name}</h3>
+				<Icon icon={CaretDown} />
+			</Button>
+		</Popover.Trigger>
+		<Popover.Content class="w-32 space-y-2">
+			{#each $templates as template}
+				<button
+					on:click={() => {
+						updateCurrentTemplate(template);
+						popoverOpen = false;
+					}}
+					class={`flex w-full items-center space-x-2 p-1 px-2 hover:bg-pen-100 dark:hover:bg-pen-800/20 rounded-md cursor-pointer {
+						${template.isActive ? 'bg-pen-100 dark:bg-pen-800/20' : ''}`}
+				>
+					<span>{template.name}</span>
+				</button>
+			{/each}
+		</Popover.Content>
+	</Popover.Root>
 	{#if isClient}
 		<div class="relative flex items-center">
 			<button
