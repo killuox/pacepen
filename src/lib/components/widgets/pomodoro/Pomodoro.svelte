@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card';
-	import Header from '../layout/Header.svelte';
+	import Header from '../../layout/Header.svelte';
 	export let time = 25;
 
 	let minutes = time;
