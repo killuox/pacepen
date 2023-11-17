@@ -1,75 +1,40 @@
 <script lang="ts">
 	import Pomodoro from '$lib/components/widgets/pomodoro/Pomodoro.svelte';
-    import { currentTemplate } from '$lib/stores/template';
+	import Todo from '$lib/components/widgets/todo/Todo.svelte';
+	import { currentTemplate } from '$lib/stores/template';
 	import type { SvelteComponent } from 'svelte';
+	import WidgetWrapper from './WidgetWrapper.svelte';
 
-    const templatesComponents = {
-        pomodoro: Pomodoro,
+	const templatesComponents = {
+		pomodoro: Pomodoro,
+		todo: Todo
+	} as {
+		[key: string]: typeof SvelteComponent;
+	};
 
-    } as {
-        [key: string]: typeof SvelteComponent;
-    }
+	$: formattedTemplateArea = $currentTemplate.area.reduce((acc, curr) => {
+		const rowArea = curr.reduce((acc, curr) => {
+			return acc + `${curr} `;
+		}, '');
 
-    $: formattedTemplateArea = $currentTemplate.area.reduce((acc, curr) => {
-        const rowArea = curr.reduce((acc, curr) => {
-            return acc + `${curr} `;
-        }, '');
+		return acc + `"${rowArea}" `;
+	}, '');
 
-        return acc + `"${rowArea}" `;
-    }, '');
-
-    $: templateWidgets = $currentTemplate.area.flat().reduce((acc: string[], curr: string) => { // return only unique widgets
-        if (!acc.includes(curr)) {
-            acc.push(curr);
-        }
-        return acc;
-    }, []);
-    
+	$: templateWidgets = $currentTemplate.area.flat().reduce((acc: string[], curr: string) => {
+		// return only unique widgets
+		if (!acc.includes(curr)) {
+			acc.push(curr);
+		}
+		return acc;
+	}, []);
 </script>
 
-<div class="widget-area h-full" style="grid-template-areas: {formattedTemplateArea}">
-    {#each templateWidgets as widget}
-        <div class="{widget}" style="grid-area: {widget}">
-            <svelte:component this={templatesComponents[widget]} />
-        </div>
-    {/each}
+<div class="grid gap-3 min-h-[calc(100vh-140px)]" style="grid-template-areas: {formattedTemplateArea}">
+	{#each templateWidgets as widget}
+		<div class={widget} style="grid-area: {widget}">
+			<WidgetWrapper widget={widget}>
+				<svelte:component this={templatesComponents[widget]} />
+			</WidgetWrapper>
+		</div>
+	{/each}
 </div>
-
-<style>
-    .widget-area {
-        display: grid;
-        gap: 1rem;
-    }
-
-    .header {
-        grid-area: header;
-    }
-
-    .pomodoro {
-        grid-area: pomodoro;
-    }
-
-    .tasks {
-        grid-area: tasks;
-    }
-
-    .notes {
-        grid-area: notes;
-    }
-
-    .weather {
-        grid-area: weather;
-    }
-
-    .news {
-        grid-area: news;
-    }
-
-    .calendar {
-        grid-area: calendar;
-    }
-
-    .quotes {
-        grid-area: quotes;
-    }
-</style>

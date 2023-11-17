@@ -5,11 +5,11 @@ const templateList = [
 		name: 'Default',
 		isActive: true,
 		area: [
-			['pomodoro', 'pomodoro', 'todo', 'todo', 'todo'],
-			['notes', 'notes', 'todo', 'todo', 'todo'],
-			['notes', 'notes', 'todo', 'todo', 'todo'],
-			['notes', 'notes', 'x', 'x', 'x'],
-			['z', 'z', 'x', 'x', 'x']
+			['pomodoro', 'notes', 'notes', 'todo', 'todo'],
+			['objectives', 'notes', 'notes', 'todo', 'todo'],
+			['objectives', 'notes', 'notes', 'todo', 'todo'],
+			['objectives', 'x', 'x', 'x', 'x'],
+			['objectives', 'x', 'x', 'x', 'x']
 		]
 	},
 	{

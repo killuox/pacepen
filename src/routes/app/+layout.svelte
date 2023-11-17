@@ -3,7 +3,7 @@
 </script>
 
 <AppShell>
-	<main class="overflow-auto">
+	<main class="overflow-hidden">
 		<slot />
 	</main>
 </AppShell>
